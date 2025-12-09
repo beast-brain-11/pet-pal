@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vet &amp; Insurance Survey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4043f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass {
+            background: rgba(26, 26, 42, 0.4); /* Slightly lighter than background-dark */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .form-input-glass {
+            background-color: transparent;
+            border: none;
+            color: #101022;
+        }
+        .dark .form-input-glass {
+            color: #f6f6f8;
+        }
+        .form-input-glass::placeholder {
+            color: rgba(16, 16, 34, 0.5);
+        }
+        .dark .form-input-glass::placeholder {
+            color: rgba(246, 246, 248, 0.5);
+        }
+        .form-input-glass:focus {
+            outline: none;
+            ring: 0;
+            box-shadow: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-gradient-to-b from-[#e0e6ff] to-[#f0f2ff] dark:from-[#101022] dark:to-[#1a1c38]">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden text-slate-800 dark:text-slate-200">
+<header class="sticky top-0 z-10 p-4 pb-2 bg-white/30 dark:bg-black/30 backdrop-blur-md">
+<div class="flex items-center">
+<button class="text-slate-800 dark:text-slate-200 flex size-12 shrink-0 items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12 text-slate-900 dark:text-white">Vet &amp; Insurance Details</h1>
+</div>
+</header>
+<main class="flex-1 px-4 py-2">
+<div class="flex flex-col gap-3 py-4">
+<div class="flex gap-6 justify-end items-center">
+<p class="text-sm font-medium leading-normal text-slate-700 dark:text-slate-300">Step 8/8</p>
+</div>
+<div class="rounded-full bg-primary/20">
+<div class="h-2 rounded-full bg-primary" style="width: 100%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-8 py-4">
+<!-- Primary Veterinarian Section -->
+<section class="flex flex-col gap-4">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-white">Primary Veterinarian</h2>
+<div class="flex flex-col gap-y-4">
+<div class="flex flex-col min-w-40 flex-1">
+<label class="text-base font-medium leading-normal pb-2" for="clinic-name">Clinic Name</label>
+<div class="glass flex items-center w-full rounded-xl h-14 px-4">
+<input class="form-input-glass flex-1 min-w-0 resize-none overflow-hidden focus:outline-0 focus:ring-0 text-base font-normal leading-normal" id="clinic-name" placeholder="Search clinic or add new" value=""/>
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">search</span>
+</div>
+</div>
+<div class="flex flex-col min-w-40 flex-1">
+<label class="text-base font-medium leading-normal pb-2" for="doctor-name">Doctor's Name</label>
+<div class="glass flex items-center w-full rounded-xl h-14 px-4">
+<input class="form-input-glass flex-1 min-w-0 resize-none overflow-hidden focus:outline-0 focus:ring-0 text-base font-normal leading-normal" id="doctor-name" placeholder="Enter doctor's name" value=""/>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col flex-1">
+<label class="text-base font-medium leading-normal pb-2" for="last-visit">Last Visit</label>
+<div class="glass flex items-center w-full rounded-xl h-14 px-4">
+<input class="form-input-glass flex-1 min-w-0" id="last-visit" onblur="(this.type='text')" onfocus="(this.type='date')" placeholder="MM/DD/YYYY" type="text"/>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<label class="text-base font-medium leading-normal pb-2" for="next-visit">Next Visit</label>
+<div class="glass flex items-center w-full rounded-xl h-14 px-4">
+<input class="form-input-glass flex-1 min-w-0" id="next-visit" onblur="(this.type='text')" onfocus="(this.type='date')" placeholder="MM/DD/YYYY" type="text"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pet Insurance Section -->
+<section class="flex flex-col gap-4">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-white">Pet Insurance</h2>
+<div class="flex flex-col gap-2">
+<p class="text-base font-medium leading-normal">Do you have pet insurance?</p>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center h-12 rounded-xl text-base font-semibold bg-primary text-white">Yes</button>
+<button class="flex items-center justify-center h-12 rounded-xl text-base font-semibold bg-white/50 dark:bg-white/10 text-slate-700 dark:text-slate-300">No</button>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col min-w-40 flex-1">
+<label class="text-base font-medium leading-normal pb-2" for="provider-name">Provider Name</label>
+<div class="glass flex items-center w-full rounded-xl h-14 px-4">
+<input class="form-input-glass flex-1 min-w-0" id="provider-name" placeholder="e.g. PetPlan"/>
+</div>
+</div>
+<div class="flex flex-col min-w-40 flex-1">
+<label class="text-base font-medium leading-normal pb-2" for="policy-number">Policy Number</label>
+<div class="glass flex items-center w-full rounded-xl h-14 px-4">
+<input class="form-input-glass flex-1 min-w-0" id="policy-number" placeholder="Enter policy number"/>
+</div>
+</div>
+<div class="flex flex-col min-w-40 flex-1">
+<label class="text-base font-medium leading-normal pb-2">Upload Policy Document</label>
+<div class="glass flex flex-col items-center justify-center w-full rounded-xl border-2 border-dashed border-slate-400/50 dark:border-slate-500/50 p-6 text-center cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">cloud_upload</span>
+<p class="text-base font-semibold text-slate-800 dark:text-slate-200">Click to upload</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">PDF, PNG, or JPG</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Emergency Contact Section -->
+<section class="flex flex-col gap-4">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-white">Emergency Contact</h2>
+<div class="flex flex-col gap-y-4">
+<div class="flex flex-col min-w-40 flex-1">
+<label class="text-base font-medium leading-normal pb-2" for="contact-name">Contact Name</label>
+<div class="glass flex items-center w-full rounded-xl h-14 px-4">
+<input class="form-input-glass flex-1 min-w-0" id="contact-name" placeholder="Enter full name"/>
+</div>
+</div>
+<div class="flex flex-col min-w-40 flex-1">
+<label class="text-base font-medium leading-normal pb-2" for="contact-relationship">Relationship</label>
+<div class="glass flex items-center w-full rounded-xl h-14 px-4">
+<input class="form-input-glass flex-1 min-w-0" id="contact-relationship" placeholder="e.g. Partner, Friend, Family"/>
+</div>
+</div>
+<div class="flex flex-col min-w-40 flex-1">
+<label class="text-base font-medium leading-normal pb-2" for="contact-phone">Phone Number</label>
+<div class="glass flex items-center w-full rounded-xl h-14 px-4">
+<input class="form-input-glass flex-1 min-w-0" id="contact-phone" placeholder="(123) 456-7890" type="tel"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="sticky bottom-0 z-10 p-4 pt-2 bg-gradient-to-t from-[#f0f2ff] via-[#f0f2ff]/90 to-transparent dark:from-[#1a1c38] dark:via-[#1a1c38]/90">
+<button class="w-full h-14 rounded-xl bg-primary text-white font-bold text-lg flex items-center justify-center">Finish</button>
+</footer>
+</div>
+</body></html>

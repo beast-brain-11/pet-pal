@@ -1,0 +1,105 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Check if user owns the resource
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // =========================================================================
+    // USER DATA
+    // =========================================================================
+    
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+      // SAVED RECIPES
+      match /recipes/{recipeId} {
+        allow read, write: if isOwner(userId);
+      }
+      
+      // DOG PROFILES
+      match /dogs/{dogId} {
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId);
+        allow delete: if isOwner(userId);
+        
+        // TASKS
+        match /tasks/{taskId} {
+          allow read, write: if isOwner(userId);
+        }
+        
+        // STATS - With validation
+        match /stats/{statId} {
+          allow read: if isOwner(userId);
+          allow create: if isOwner(userId);
+          allow update: if isOwner(userId) && validateStats();
+          allow delete: if isOwner(userId);
+          
+          function validateStats() {
+            let data = request.resource.data;
+            return data.get('mealsLogged', 0) <= 10 &&
+                   data.get('waterCups', 0) <= 20 &&
+                   data.get('steps', 0) <= 100000;
+          }
+        }
+        
+        // GAMIFICATION - Anti-cheat rules
+        match /gamification/{docId} {
+          allow read: if isOwner(userId);
+          allow create: if isOwner(userId);
+          allow update: if isOwner(userId) && validateXPUpdate();
+          allow delete: if false;
+          
+          function validateXPUpdate() {
+            let old = resource.data;
+            let new = request.resource.data;
+            
+            // Rule 1: Max 100 XP per action
+            let xpDelta = new.get('totalXP', 0) - old.get('totalXP', 0);
+            
+            // Rule 2: Max 500 daily XP
+            let dailyOk = new.get('dailyXP', 0) <= 500;
+            
+            // Rule 3: Level can only increase by 1
+            let levelOk = new.get('level', 1) <= old.get('level', 1) + 1;
+            
+            // Rule 4: Action limits
+            let mealsOk = new.get('dailyMeals', 0) <= 10;
+            let walksOk = new.get('dailyWalks', 0) <= 5;
+            let photosOk = new.get('dailyPhotos', 0) <= 20;
+            
+            return xpDelta <= 100 && dailyOk && levelOk && mealsOk && walksOk && photosOk;
+          }
+        }
+        
+        // XP LOG - Immutable
+        match /xp_log/{logId} {
+          allow read: if isOwner(userId);
+          allow create: if isOwner(userId);
+          allow update, delete: if false;
+        }
+        
+        // WALKS
+        match /walks/{walkId} {
+          allow read, write: if isOwner(userId);
+        }
+        
+        // PHOTOS
+        match /photos/{photoId} {
+          allow read, write: if isOwner(userId);
+        }
+      }
+    }
+    
+    // Deny everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

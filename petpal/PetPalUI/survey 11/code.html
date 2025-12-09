@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Health Profile Complete!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4043f2",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101022",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display" style="background-image: linear-gradient(to bottom, #4043f220, #f6f6f8);">
+<div class="dark:hidden absolute inset-0 -z-10" style="background-image: linear-gradient(to bottom, #4043f220, #f6f6f8);"></div>
+<div class="hidden dark:block absolute inset-0 -z-10" style="background-image: linear-gradient(to bottom, #4043f220, #101022);"></div>
+<main class="flex w-full grow flex-col px-6 pt-12 pb-8">
+<div class="flex-grow">
+<div class="flex w-full justify-center">
+<div class="relative flex h-52 w-52 items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-primary/10"></div>
+<div class="absolute inset-6 rounded-full bg-primary/20"></div>
+<img class="h-44 w-44 object-contain" data-alt="Illustration of a happy, healthy dog with a medical heart symbol on its chest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzq8B96xVoHGNmnk_aoYnKdNsfUl_EKnuEavuH5Un8FQwInXXea9HoTgTFrsht4aN-Qh3iGCn6dNekyVNuBDyXDx41c5BOFJtcgzavCpaDt1KqpDDTU494a2Q842vP7TqwthpuZBI3LcnrniMm0P-0P5Rzxwt5Zq2r2KT798xngs-1BAUtpkLtIslX8GRrLao0WY17b_Ki7x-FapRA5LYSGCI-prxFqJPVX3B5SjKOvfxtDEOw4XW0Cja2Y7SVnBOBrWGYx9uVoDh3"/>
+</div>
+</div>
+<h1 class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight text-center pb-2 pt-8">Health Profile Complete! 🎉</h1>
+<p class="text-slate-600 dark:text-slate-300 text-base font-normal leading-normal pb-6 text-center">Here's what you've recorded:</p>
+<div class="flex flex-col gap-2 rounded-lg border border-white/20 bg-white/30 p-4 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-slate-800/20">
+<div class="flex items-center gap-4 min-h-14">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl">vaccines</span>
+</div>
+<p class="flex-1 truncate text-base font-normal leading-normal text-slate-800 dark:text-slate-100">Vaccinations</p>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center">
+<span class="material-symbols-outlined text-2xl text-green-500">check_circle</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 min-h-14">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl">medical_information</span>
+</div>
+<p class="flex-1 truncate text-base font-normal leading-normal text-slate-800 dark:text-slate-100">Medical History</p>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center">
+<span class="material-symbols-outlined text-2xl text-green-500">check_circle</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 min-h-14">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl">local_hospital</span>
+</div>
+<p class="flex-1 truncate text-base font-normal leading-normal text-slate-800 dark:text-slate-100">Vet Information</p>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center">
+<span class="material-symbols-outlined text-2xl text-green-500">check_circle</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 min-h-14">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl">upload_file</span>
+</div>
+<p class="flex-1 truncate text-base font-normal leading-normal text-slate-800 dark:text-slate-100">Documents Uploaded</p>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center">
+<span class="material-symbols-outlined text-2xl text-green-500">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 flex items-center gap-3 rounded-lg border border-white/20 bg-white/30 p-4 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-slate-800/20">
+<span class="material-symbols-outlined text-2xl text-primary">notifications_active</span>
+<p class="text-sm text-slate-700 dark:text-slate-200">Reminders for important dates are now set.</p>
+</div>
+</div>
+<div class="mt-8 flex flex-col items-center gap-4 pt-4">
+<button class="flex h-14 w-full items-center justify-center rounded-lg bg-primary text-base font-bold text-white shadow-lg transition-colors hover:bg-primary/90">View Full Health Profile</button>
+<button class="h-14 w-full text-base font-bold text-slate-500 dark:text-slate-400 transition-colors hover:text-slate-700 dark:hover:text-slate-200">I'll do this later</button>
+</div>
+</main>
+</div>
+</body></html>

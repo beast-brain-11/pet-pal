@@ -1,0 +1,110 @@
+name: petpal
+description: "AI-Powered Dog Nutrition & Health App"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Icons
+  cupertino_icons: ^1.0.8
+  
+  # Firebase
+  firebase_core: ^3.8.1
+  firebase_auth: ^5.3.4
+  cloud_firestore: ^5.5.1
+  firebase_storage: ^12.3.7
+  
+  # Location / GPS
+  geolocator: ^13.0.2
+  
+  # AI & Agents
+  google_generative_ai: ^0.4.6
+  
+  # State Management
+  flutter_riverpod: ^2.5.1
+  
+  # Navigation
+  go_router: ^14.2.0
+  
+  # HTTP & API
+  dio: ^5.4.3
+  http: ^1.2.0
+  
+  # Data Models
+  json_annotation: ^4.9.0
+  
+  # Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.3
+  path_provider: ^2.1.3
+  
+  # UI Components
+  flutter_svg: ^2.2.3
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
+  google_fonts: ^6.2.1
+  smooth_page_indicator: ^1.1.0
+  flutter_slidable: ^3.1.1
+  
+  # Media
+  image_picker: ^1.1.2
+  
+  # Charts & Progress
+  fl_chart: ^0.68.0
+  percent_indicator: ^4.2.3
+  
+  # Calendar
+  table_calendar: ^3.1.2
+  
+  # Utilities
+  intl: any
+  uuid: ^4.4.2
+  timeago: ^3.6.1
+  
+  # Loading States
+  loading_animation_widget: ^1.2.1
+  
+  # Toast/Snackbar
+  fluttertoast: ^8.2.6
+  google_sign_in: ^6.2.1
+  share_plus: ^12.0.1
+  
+  # Real-time Streaming
+  web_socket_channel: ^2.4.0
+  
+  # Audio Recording & Playback - uncomment after fixing Android config
+  # record: ^5.0.4
+  # just_audio: ^0.9.36
+  
+  # Camera for video mode - uncomment after Android config
+  # camera: ^0.10.5+9
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/animations/
+    - assets/icons/
+
+# Flutter Launcher Icons configuration
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#8078EE"
+  adaptive_icon_foreground: "assets/icons/app_icon.png"
+

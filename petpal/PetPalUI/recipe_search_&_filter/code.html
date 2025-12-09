@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recipe Search &amp; Filter</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4043f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+        .glassmorphic {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative mx-auto flex h-auto min-h-screen w-full max-w-md flex-col overflow-hidden bg-gradient-to-br from-[#E9E4FF] via-[#F2F0FF] to-background-light dark:from-[#1A1A3D] dark:via-[#15152F] dark:to-background-dark group/design-root">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 flex items-center justify-between px-4 py-4 text-gray-800 dark:text-white">
+<div class="flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-[#4043f2] !text-3xl">pets</span>
+</div>
+<h1 class="flex-1 text-center text-lg font-bold">Recipes</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="relative flex cursor-pointer items-center justify-center rounded-full">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto px-4 pb-28">
+<!-- Search Bar -->
+<div class="relative my-4">
+<label class="flex flex-col min-w-40 h-14 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg glassmorphic">
+<div class="text-gray-600 dark:text-gray-300 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-gray-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-2 text-base font-normal" placeholder="Search recipes, ingredients..." value=""/>
+</div>
+</label>
+</div>
+<!-- Recent & Trending Searches -->
+<div>
+<h3 class="text-[#111118] dark:text-gray-200 text-lg font-bold leading-tight tracking-[-0.015em] pb-2 pt-2">Recent searches</h3>
+<div class="flex gap-2 p-1 flex-wrap">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light dark:bg-background-dark/80 pl-4 pr-4">
+<p class="text-[#111118] dark:text-gray-300 text-sm font-medium">Chicken and rice</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light dark:bg-background-dark/80 pl-4 pr-4">
+<p class="text-[#111118] dark:text-gray-300 text-sm font-medium">Salmon jerky</p>
+</div>
+</div>
+<h3 class="text-[#111118] dark:text-gray-200 text-lg font-bold leading-tight tracking-[-0.015em] pb-2 pt-4">Trending searches</h3>
+<div class="flex gap-2 p-1 flex-wrap">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light dark:bg-background-dark/80 pl-4 pr-4">
+<p class="text-[#111118] dark:text-gray-300 text-sm font-medium">Puppy formula</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-background-light dark:bg-background-dark/80 pl-4 pr-4">
+<p class="text-[#111118] dark:text-gray-300 text-sm font-medium">Grain-free dinner</p>
+</div>
+</div>
+</div>
+<!-- Advanced Filters Header -->
+<div class="flex items-center justify-between pt-8 pb-4">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Advanced Filters</h2>
+<div class="relative">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">tune</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
+</div>
+</div>
+<!-- Filter Sections -->
+<div class="space-y-4">
+<!-- Dietary Preferences -->
+<div class="rounded-lg glassmorphic p-4">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-semibold text-gray-800 dark:text-white">Dietary Preferences</h4>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">expand_less</span>
+</div>
+<div class="grid grid-cols-2 gap-x-4 gap-y-3 pt-4">
+<label class="flex items-center space-x-2">
+<input checked="" class="form-checkbox h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary/50" type="checkbox"/>
+<span class="text-gray-700 dark:text-gray-200">Grain-Free</span>
+</label>
+<label class="flex items-center space-x-2">
+<input class="form-checkbox h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary/50" type="checkbox"/>
+<span class="text-gray-700 dark:text-gray-200">Low-Carb</span>
+</label>
+<label class="flex items-center space-x-2">
+<input checked="" class="form-checkbox h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary/50" type="checkbox"/>
+<span class="text-gray-700 dark:text-gray-200">High-Protein</span>
+</label>
+<label class="flex items-center space-x-2">
+<input class="form-checkbox h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary/50" type="checkbox"/>
+<span class="text-gray-700 dark:text-gray-200">Puppy Formula</span>
+</label>
+</div>
+</div>
+<!-- Meal Type -->
+<div class="rounded-lg glassmorphic p-4">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-semibold text-gray-800 dark:text-white">Meal Type</h4>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">expand_more</span>
+</div>
+</div>
+<!-- Ingredients -->
+<div class="rounded-lg glassmorphic p-4">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-semibold text-gray-800 dark:text-white">Ingredients</h4>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">expand_more</span>
+</div>
+</div>
+<!-- Nutrition Range -->
+<div class="rounded-lg glassmorphic p-4">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-semibold text-gray-800 dark:text-white">Nutrition Range</h4>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">expand_less</span>
+</div>
+<div class="space-y-4 pt-4">
+<div>
+<div class="flex justify-between text-sm text-gray-700 dark:text-gray-300">
+<span>Calories</span>
+<span>200 - 800 kcal</span>
+</div>
+<input class="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-primary mt-2" type="range"/>
+</div>
+<div>
+<div class="flex justify-between text-sm text-gray-700 dark:text-gray-300">
+<span>Protein</span>
+<span>15g - 50g</span>
+</div>
+<input class="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-primary mt-2" type="range"/>
+</div>
+</div>
+</div>
+<!-- Preparation -->
+<div class="rounded-lg glassmorphic p-4">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-semibold text-gray-800 dark:text-white">Preparation</h4>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">expand_more</span>
+</div>
+</div>
+<!-- Special Needs -->
+<div class="rounded-lg glassmorphic p-4">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-semibold text-gray-800 dark:text-white">Special Needs</h4>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">expand_more</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Action Buttons & Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 mx-auto max-w-md">
+<!-- Action Buttons -->
+<div class="flex gap-4 p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<button class="flex-1 rounded-full border border-primary/50 bg-transparent py-3 text-center font-bold text-primary">Clear All</button>
+<button class="flex-1 rounded-full bg-primary py-3 text-center font-bold text-white shadow-lg shadow-primary/30">Apply Filters</button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="flex justify-around border-t border-gray-200/50 bg-background-light/80 dark:border-gray-700/50 dark:bg-background-dark/80 backdrop-blur-sm pb-4 pt-2">
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="text-xs font-bold">Recipes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">health_and_safety</span>
+<span class="text-xs">Health</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-xs">Location</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-xs">Shop</span>
+</a>
+</nav>
+</div>
+</div>
+</body></html>

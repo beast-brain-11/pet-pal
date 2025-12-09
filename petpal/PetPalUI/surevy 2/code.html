@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetPal - Breed &amp; Age Survey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6363f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display">
+<div class="relative flex h-full min-h-screen w-full flex-col font-display group/design-root overflow-y-auto bg-gradient-to-b from-[#4043f2] to-[#6363f2] text-white">
+<div class="flex flex-col p-6 space-y-6">
+<header class="flex items-center justify-between">
+<button class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full backdrop-blur-lg">
+<span class="material-symbols-outlined text-white text-2xl">arrow_back_ios_new</span>
+</button>
+<div class="flex-grow text-center">
+<span class="text-white/80 text-sm font-semibold">2/5</span>
+</div>
+<div class="w-10"></div>
+</header>
+<div class="text-center">
+<h1 class="text-3xl font-bold tracking-tight">Tell Us About Your Pup</h1>
+</div>
+<main class="flex flex-col space-y-8">
+<section class="space-y-4">
+<h2 class="text-lg font-bold">Breed</h2>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-white/50">search</span>
+<input class="w-full h-14 pl-12 pr-4 bg-white/10 placeholder:text-white/50 border-none rounded-xl backdrop-blur-lg focus:ring-2 focus:ring-white/50" placeholder="Search breed..." type="text"/>
+</div>
+<div class="grid grid-cols-3 gap-3 text-center">
+<button class="bg-white/10 backdrop-blur-lg py-3 rounded-lg text-sm font-semibold">Golden Retriever</button>
+<button class="bg-white/20 backdrop-blur-lg py-3 rounded-lg text-sm font-semibold ring-1 ring-white">German Shepherd</button>
+<button class="bg-white/10 backdrop-blur-lg py-3 rounded-lg text-sm font-semibold">Labrador</button>
+<button class="bg-white/10 backdrop-blur-lg py-3 rounded-lg text-sm font-semibold">French Bulldog</button>
+<button class="bg-white/10 backdrop-blur-lg py-3 rounded-lg text-sm font-semibold">Beagle</button>
+<button class="bg-white/10 backdrop-blur-lg py-3 rounded-lg text-sm font-semibold">Poodle</button>
+</div>
+</section>
+<section class="space-y-4">
+<h2 class="text-lg font-bold">Age</h2>
+<div class="grid grid-cols-3 gap-3">
+<div class="flex flex-col items-center justify-center h-28 bg-white/10 backdrop-blur-lg rounded-xl space-y-1">
+<span class="text-4xl">🐾</span>
+<span class="text-sm font-semibold">Puppyhood</span>
+<span class="text-xs text-white/70">0-1 yrs</span>
+</div>
+<div class="flex flex-col items-center justify-center h-28 bg-white/20 backdrop-blur-lg rounded-xl space-y-1 ring-1 ring-white">
+<span class="text-4xl">🐶</span>
+<span class="text-sm font-semibold">Adult</span>
+<span class="text-xs text-white/70">1-7 yrs</span>
+</div>
+<div class="flex flex-col items-center justify-center h-28 bg-white/10 backdrop-blur-lg rounded-xl space-y-1">
+<span class="text-4xl">🦴</span>
+<span class="text-sm font-semibold">Senior</span>
+<span class="text-xs text-white/70">7+ yrs</span>
+</div>
+</div>
+<div class="relative">
+<input class="w-full h-14 pl-6 pr-4 bg-white/10 placeholder:text-white/50 border-none rounded-xl backdrop-blur-lg focus:ring-2 focus:ring-white/50" placeholder="Enter exact age (optional)" type="text"/>
+</div>
+</section>
+</main>
+</div>
+<div class="sticky bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#6363f2] to-transparent mt-auto">
+<button class="w-full h-14 bg-white text-primary rounded-xl font-bold text-base">Continue</button>
+</div>
+</div>
+
+</body></html>

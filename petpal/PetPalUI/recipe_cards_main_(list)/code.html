@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetPal Recipes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4043f2",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101022",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glassmorphic {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .dark .glassmorphic {
+            background: rgba(38, 38, 62, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-gradient-to-b from-[#8E90F4] to-[#4043f2]">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden" style="background-color: transparent;">
+<!-- Main Content Area -->
+<div class="flex-grow pb-24">
+<!-- Top App Bar -->
+<div class="flex flex-col gap-2 p-4 pb-2">
+<div class="flex items-center h-12 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl">pets</span>
+</div>
+<div class="flex items-center justify-end gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 w-12 bg-transparent text-white">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 w-12 bg-transparent text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 w-12 bg-transparent text-white">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+<p class="text-white tracking-light text-[28px] font-bold leading-tight">Recipes for Luna</p>
+<p class="text-white/80 text-base font-normal leading-normal">Golden Retriever - Adult - 65 lbs</p>
+</div>
+<!-- Quick Filter Chips -->
+<div class="flex gap-3 px-4 py-3 overflow-x-auto no-scrollbar">
+<div class="relative flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white pl-4 pr-4">
+<p class="text-primary text-sm font-bold leading-normal">All Recipes</p>
+<div class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-white text-[10px] font-bold">12</div>
+</div>
+<div class="relative flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full glassmorphic pl-4 pr-4">
+<p class="text-white text-sm font-medium leading-normal">Grain-Free</p>
+<div class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-white text-[10px] font-bold">5</div>
+</div>
+<div class="relative flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full glassmorphic pl-4 pr-4">
+<p class="text-white text-sm font-medium leading-normal">High-Protein</p>
+<div class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-white text-[10px] font-bold">8</div>
+</div>
+<div class="relative flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full glassmorphic pl-4 pr-4">
+<p class="text-white text-sm font-medium leading-normal">Puppy</p>
+</div>
+</div>
+<!-- Sort Dropdown -->
+<div class="px-4 pb-4">
+<div class="flex items-center gap-2 text-white/90">
+<p class="text-sm font-medium">Sort by: Newest First</p>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</div>
+</div>
+<!-- Tabs -->
+<div class="px-4">
+<div class="flex overflow-x-auto no-scrollbar border-b border-white/20 gap-4">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-white text-white pb-[13px] pt-2 shrink-0" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">All Recipes</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-2 shrink-0" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Favorites</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-2 shrink-0" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">This Week's Plan</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-2 shrink-0" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Recent</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-2 shrink-0" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Collections</p>
+</a>
+</div>
+</div>
+<!-- Recipe Cards List -->
+<div class="flex flex-col gap-4 p-4">
+<!-- Card 1 -->
+<div class="flex flex-col items-stretch justify-start rounded-xl glassmorphic overflow-hidden">
+<div class="relative w-full bg-center bg-no-repeat aspect-[16/7] bg-cover" data-alt="A bowl of salmon and sweet potato dog food" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNPmTbNZGkHfJsFmKczWpjTayYuHBvWdTrl2Ugcu774rfi8B_Gcr0bZqQR94wKH2GRlttq_Gwu8C8JqELJ9n_4rd2IUJCLaGctVr1iSroYE3X54IPspCm4KnsgIAcPRf85CKYkUoXRE3gR0OfvLeZ-tuGug9nd-py5bpcsrO5-U8maj4y_ELnlCi16Ui09_Q7OIZVRa1dW5yBb0hiQ1UoRf-Cm2-6lTs6WTb7TAg5thn2xi1F2nHDZVKsXzHmbTypuyS-l-KN-5Nb1");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-2 left-2 px-3 py-1 bg-black/40 rounded-full text-white text-xs font-semibold">High-Protein</div>
+<button class="absolute top-2 right-2 flex items-center justify-center size-8 rounded-full bg-black/40 text-white">
+<span class="material-symbols-outlined text-xl">favorite_border</span>
+</button>
+<div class="absolute top-2 left-2 px-3 py-1 bg-teal-500 text-white text-xs font-bold rounded-full">For 65 lb dog</div>
+</div>
+<div class="flex w-full flex-col items-stretch justify-center gap-3 p-4">
+<p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Hearty Salmon &amp; Sweet Potato Bake</p>
+<p class="text-white/80 text-sm font-normal leading-normal">A delicious, omega-rich meal perfect for a shiny coat.</p>
+<div class="flex gap-2 overflow-x-auto no-scrollbar">
+<div class="flex h-6 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/50 px-3"><p class="text-white text-xs font-medium">Grain-Free</p></div>
+<div class="flex h-6 shrink-0 items-center justify-center gap-x-2 rounded-full bg-teal-500/50 px-3"><p class="text-white text-xs font-medium">Omega-3</p></div>
+<div class="flex h-6 shrink-0 items-center justify-center gap-x-2 rounded-full bg-orange-500/50 px-3"><p class="text-white text-xs font-medium">25 min prep</p></div>
+</div>
+<div class="flex items-center justify-between text-white/80 text-xs gap-4 pt-2">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">local_fire_department</span>350 cal</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">fitness_center</span>25g protein</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">restaurant</span>2 servings</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">star</span>4.5</div>
+</div>
+<div class="flex items-center gap-3 justify-end pt-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-primary text-white text-sm font-medium leading-normal"><span>View Recipe</span></button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-white/20 text-white text-sm font-medium leading-normal"><span>Share</span></button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col items-stretch justify-start rounded-xl glassmorphic overflow-hidden">
+<div class="relative w-full bg-center bg-no-repeat aspect-[16/7] bg-cover" data-alt="A bowl of chicken and rice dog food" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAm96z61CvMFEqeOX69GBbkZ1_Pp7zWtIqTNhEAgAL88_7c3u0DFq-CtPMW7qqjPTwQVfFUK-lKVZkbB8DrjjsL9Q2DjHpAlYWF8HtpBMKSBH1ajhBQbM8FEO9R3jCEZnYVcKz930DYe4RLEGka1nuLyw6NM9uTH0UIA4gGbXGfgJYQnKpFoH-jdkX4QRCxtGFCZ7S-Yp_DGpdk6dsZYtzOWfjJDxx9WmWoWshzZ2tAQAlJnM2CQ1wc62W3arOjBxUobcOg7A6is8Q");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-2 left-2 px-3 py-1 bg-black/40 rounded-full text-white text-xs font-semibold">Lean Muscle</div>
+<button class="absolute top-2 right-2 flex items-center justify-center size-8 rounded-full bg-black/40 text-orange-500">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute top-2 left-2 px-3 py-1 bg-teal-500 text-white text-xs font-bold rounded-full">For 65 lb dog</div>
+</div>
+<div class="flex w-full flex-col items-stretch justify-center gap-3 p-4">
+<p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Chicken &amp; Rice Power Bowl</p>
+<p class="text-white/80 text-sm font-normal leading-normal">An easily digestible classic for sustained energy.</p>
+<div class="flex gap-2 overflow-x-auto no-scrollbar">
+<div class="flex h-6 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/50 px-3"><p class="text-white text-xs font-medium">Gluten-Free</p></div>
+<div class="flex h-6 shrink-0 items-center justify-center gap-x-2 rounded-full bg-orange-500/50 px-3"><p class="text-white text-xs font-medium">30 min prep</p></div>
+</div>
+<div class="flex items-center justify-between text-white/80 text-xs gap-4 pt-2">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">local_fire_department</span>400 cal</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">fitness_center</span>30g protein</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">restaurant</span>2 servings</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">star</span>4.8</div>
+</div>
+<div class="flex items-center gap-3 justify-end pt-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-primary text-white text-sm font-medium leading-normal"><span>View Recipe</span></button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-white/20 text-white text-sm font-medium leading-normal"><span>Share</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 h-24 bg-white/10 backdrop-blur-lg" style="mask-image: linear-gradient(to top, white 50%, transparent 100%); -webkit-mask-image: linear-gradient(to top, white 50%, transparent 100%);">
+<div class="flex justify-around items-center h-full pt-4">
+<a class="flex flex-col items-center gap-1 text-white/70" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="text-xs font-bold">Recipes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/70" href="#">
+<span class="material-symbols-outlined">health_and_safety</span>
+<span class="text-xs font-medium">Health</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/70" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-xs font-medium">Location</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/70" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-xs font-medium">Shop</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>

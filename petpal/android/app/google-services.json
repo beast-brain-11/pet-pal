@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "175615403824",
+    "project_id": "petpal-5707",
+    "storage_bucket": "petpal-5707.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175615403824:android:05a05879a7d6268b888af5",
+        "android_client_info": {
+          "package_name": "com.petpal.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175615403824-uaeoc9p10htca62tm48l9bvdi5pbjvfp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.petpal.app",
+            "certificate_hash": "62da0c486162bc0e125505d6ee4ad67277e51c29"
+          }
+        },
+        {
+          "client_id": "175615403824-bssuf1gra4upo1lm2c0iv74mq6cls0hd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDegVok5cFl-YT2mEH7kHpFqHLnL9GrUuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175615403824-bssuf1gra4upo1lm2c0iv74mq6cls0hd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "175615403824-9p48ic7a0kmmr5h61l3v820lbkpm2oqg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.petpal.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

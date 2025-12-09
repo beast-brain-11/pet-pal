@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PetPal splash screen - matches Flutter gradient -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gradient background matching Flutter splash -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#4043F2"
+                android:endColor="#6467F2"
+                android:angle="270"
+                android:type="linear"/>
+        </shape>
+    </item>
+</layer-list>

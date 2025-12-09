@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ultimate Home Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4043f2",
+            "primary-light": "#8b8dfa",
+            "primary-dark": "#4a4db5",
+            "health-green": "#4ade80",
+            "health-yellow": "#facc15",
+            "health-red": "#f87171",
+            "meal-color": "#fb923c",
+            "walk-color": "#60a5fa",
+            "meds-color": "#f87171",
+            "appt-color": "#c084fc",
+            "play-color": "#facc15",
+          },
+          fontFamily: {
+            display: ["Manrope", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+<style type="text/tailwindcss">
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .icon-unfilled {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glassmorphism {
+      background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .glassmorphism-card {
+      background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-primary text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="fixed top-0 left-0 right-0 z-40 bg-primary/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start text-white"><span class="material-symbols-outlined text-3xl">pets</span></div>
+<div class="flex size-12 shrink-0 items-center justify-end text-white">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-3xl">person</span></button>
+</div>
+</div>
+</div>
+<main class="flex-1 flex flex-col pt-20 pb-24 overflow-y-auto">
+<section class="flex flex-col items-center px-4 pt-4 pb-2">
+<div class="relative w-[280px] h-[280px] flex items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-gradient-to-br from-health-green to-health-yellow p-1">
+<div class="w-full h-full bg-primary rounded-full"></div>
+</div>
+<div class="absolute w-[250px] h-[250px] bg-center bg-no-repeat bg-cover rounded-full" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKZ8vUaKbXn70UH4PRU2ZSz170LLI20p1VOsht9Z9Q3-1nBIb2AOB39zBw8wfRWDiyzYGU0y9CFcwI_OYrbPLy0AA-FGNv7qBaQU_u9M323tt9SDIaVvXDUMpsrPwGRCz47m3QBMcCQJFF2U0Da9svvSRL5PFVfd9ASfntJoZJFfmbuVrzTYCmFNVgnP6eXANIIdbz_bFbVJMxzBFzVz1q9pOUVrnepaa2b4hT_vf5FDPqdZetMZUa967Y7vOaOCuhHFPQGpU2tZwo');"></div>
+<div class="absolute top-4 left-0 glassmorphism-card rounded-full px-3 py-1.5 text-xs font-bold flex items-center gap-1.5 bg-blue-500/50">🚶<span class="pt-px">Out for Walk</span></div>
+<div class="absolute top-4 right-0 glassmorphism-card rounded-full px-3 py-1.5 text-xs font-bold flex items-center gap-1.5">🔥<span class="pt-px">21-Day Streak!</span></div>
+</div>
+<div class="w-full overflow-x-auto no-scrollbar pt-6">
+<div class="flex items-stretch px-0 gap-3">
+<div class="glassmorphism-card flex-shrink-0 w-32 rounded-xl p-3 flex flex-col items-center text-center">
+<span class="text-3xl">🍽️</span><p class="text-sm font-semibold mt-1">Today's Meals</p><p class="text-xs text-white/80">3/3</p>
+</div>
+<div class="glassmorphism-card flex-shrink-0 w-32 rounded-xl p-3 flex flex-col items-center text-center">
+<span class="text-3xl">🐾</span><p class="text-sm font-semibold mt-1">Steps</p><p class="text-xs text-white/80">8,230</p>
+</div>
+<div class="glassmorphism-card flex-shrink-0 w-32 rounded-xl p-3 flex flex-col items-center text-center">
+<span class="text-3xl">💧</span><p class="text-sm font-semibold mt-1">Water</p><p class="text-xs text-white/80">750ml</p>
+</div>
+<div class="glassmorphism-card flex-shrink-0 w-32 rounded-xl p-3 flex flex-col items-center text-center">
+<span class="text-3xl">💊</span><p class="text-sm font-semibold mt-1">Meds</p><p class="text-xs text-white/80">1/1 Taken</p>
+</div>
+</div>
+</div>
+</section>
+<section class="flex-1 flex gap-4 px-4 py-4 min-h-[300px]">
+<div class="w-[60%] flex flex-col">
+<h2 class="text-lg font-bold">This Week's Schedule</h2>
+<div class="flex justify-between text-center text-xs font-semibold py-3">
+<div class="flex flex-col items-center gap-1"><p>Mon</p><p class="font-bold text-base">13</p></div>
+<div class="flex flex-col items-center gap-1"><p>Tue</p><p class="font-bold text-base">14</p></div>
+<div class="flex flex-col items-center gap-1 opacity-100 bg-white/20 p-2 rounded-lg relative"><p class="text-white">Wed</p><p class="font-bold text-base text-white">15</p><div class="absolute bottom-0 h-1 w-1 rounded-full bg-walk-color"></div></div>
+<div class="flex flex-col items-center gap-1"><p>Thu</p><p class="font-bold text-base">16</p></div>
+<div class="flex flex-col items-center gap-1"><p>Fri</p><p class="font-bold text-base">17</p></div>
+</div>
+<div class="flex-1 flex flex-col gap-2 overflow-y-auto no-scrollbar">
+<div class="glassmorphism-card rounded-lg p-2 flex items-center border-l-4 border-meal-color"><p class="text-xs">08:00 AM - Breakfast</p></div>
+<div class="glassmorphism-card rounded-lg p-2 flex items-center border-l-4 border-walk-color"><p class="text-xs">09:00 AM - Morning Walk</p></div>
+<div class="glassmorphism-card rounded-lg p-2 flex items-center border-l-4 border-meds-color"><p class="text-xs">12:00 PM - Medication</p></div>
+<div class="glassmorphism-card rounded-lg p-2 flex items-center border-l-4 border-appt-color"><p class="text-xs">02:00 PM - Vet Check-up</p></div>
+<div class="glassmorphism-card rounded-lg p-2 flex items-center border-l-4 border-play-color"><p class="text-xs">04:00 PM - Playtime</p></div>
+</div>
+<div class="flex justify-between items-center pt-2 text-xs">
+<button class="glassmorphism rounded-full px-3 py-1 font-semibold">View Full Week</button>
+<button class="glassmorphism rounded-full px-3 py-1 font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-sm icon-unfilled">add</span>Add Task</button>
+</div>
+</div>
+<div class="w-[40%] flex flex-col">
+<h2 class="text-lg font-bold">Pack Activity</h2>
+<div class="flex-1 flex flex-col gap-2 pt-3 overflow-y-auto no-scrollbar">
+<div class="glassmorphism-card rounded-lg p-2 text-xs">
+<div class="flex items-center gap-2 mb-1"><img alt="User avatar" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4gCroJszv9CLnZFoGgh4o3x3O4H7A6Rt-aJgZvpynO8Nz-anTWoMFxXMnY_62WJRajejmz_rrQqze7BSwIrPMFlpIXN_f2RRwKmtxn8Cj-Jk2nmLIV3O7drpnKhGhEfCyqJSaDkvvdfP4MDsbsHAx_FyhLSqz2tCmGhPxOj2r7iyFhb7-hZYX5VpfRodjuyvtivIgeturXWKFI77_FLNw7rej4Z-j3_7Xxm1VDIaoa0gL1PnF-fxO6-E0ht01EJvZhVIbZJxGte1y"/> <span class="font-bold">Mike P.</span></div>
+<p>Max loved the new chicken recipe! 🍗</p>
+<div class="flex gap-2 mt-1 text-white/70"><span class="material-symbols-outlined text-base">favorite</span><span class="material-symbols-outlined text-base">chat_bubble</span></div>
+</div>
+<div class="glassmorphism-card rounded-lg p-2 text-xs">
+<div class="flex items-center gap-2 mb-1"><img alt="User avatar" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY40lOrW4IZER9dj-Zf_FevMypbeYFncKQraKKNAM8GmCXe7k95bRPTr-SUDNYnMrsEmUonyjhXTwOaJv5y12x0Z6Go-NArDUTX7eva_YZYDX2bEJYXJFiqo5q1Ekq5ubRyPE9aNOKDxN3aFFUkwkiwZ_XG-hUNQyKbyZFmIWyROc4B364JlCvUJRWPffHFnGMMtH8WPFjmQuoVNCZj3yzEtw9dejqZTTp23Y-h_m7rdI_pb3WWt5MVCASdy7KGMSeDDFkzJDGEOvt"/> <span class="font-bold">Sarah J.</span></div>
+<p>Playdate at Green Park, 3pm?</p>
+<div class="flex gap-2 mt-1 text-white/70"><span class="material-symbols-outlined text-base">favorite</span><span class="material-symbols-outlined text-base">chat_bubble</span></div>
+</div>
+<div class="glassmorphism-card rounded-lg p-2 text-xs">
+<div class="flex items-center gap-2 mb-1"><img alt="User avatar" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwuVqqrbepkRvUGd_9woJ8Lp-ZUSfX-OgiVuOaqmY09CZfuFrfCyAbid0nAZieRlJ7LplX1ObpylFlTyc4Fwie6n_CDPnlFdNL2oTWa5vp6XFpmqGTopXg5vDflhNctJpCCwJvYDsev58E_d1P2vSzsJOGLrgreJNYR7OPNW47t885d2cfM1L9-0Z4MvfBdDD9C3snPK1aEwdAuvmGsSEUuNpqC2dXgn9Nxyo9J-60wNEv1DoSphH8aOKn3_GI9LAU53XmfCI7buRt"/> <span class="font-bold">Admin</span></div>
+<p>Event: Dog Show this Saturday!</p>
+<div class="flex gap-2 mt-1 text-white/70"><span class="material-symbols-outlined text-base">favorite</span><span class="material-symbols-outlined text-base">chat_bubble</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 py-4">
+<h2 class="text-lg font-bold mb-3">Achievement Showcase</h2>
+<div class="w-full overflow-x-auto no-scrollbar">
+<div class="flex items-stretch gap-3">
+<div class="glassmorphism-card flex-shrink-0 w-36 rounded-xl p-3 flex flex-col items-center text-center"><span class="text-4xl">🏆</span><p class="text-sm font-semibold mt-1">Perfect Week!</p><p class="text-xs text-white/80">All tasks completed.</p></div>
+<div class="glassmorphism-card flex-shrink-0 w-36 rounded-xl p-3 flex flex-col items-center text-center"><span class="text-4xl">🏃‍♂️</span><p class="text-sm font-semibold mt-1">Fitness Guru</p><p class="text-xs text-white/80">10k steps 3 days straight.</p></div>
+<div class="glassmorphism-card flex-shrink-0 w-36 rounded-xl p-3 flex flex-col items-center text-center"><span class="text-4xl">🧑‍🍳</span><p class="text-sm font-semibold mt-1">Master Chef</p><p class="text-xs text-white/80">5 new recipes tried.</p></div>
+</div>
+</div>
+<div class="mt-4">
+<div class="flex justify-between text-xs font-bold mb-1"><span>Level 5</span><span>250/1000 XP</span></div>
+<div class="w-full bg-white/20 rounded-full h-2.5"><div class="bg-health-green h-2.5 rounded-full" style="width: 25%"></div></div>
+<div class="glassmorphism-card rounded-lg p-2 mt-3 text-center"><p class="text-sm font-semibold">Daily Challenge: 30-min walk</p></div>
+</div>
+</section>
+<div class="fixed bottom-24 left-0 right-0 z-30 px-4">
+<div class="relative flex justify-around items-center h-20 glassmorphism rounded-xl px-2">
+<button class="flex flex-col items-center justify-center text-white w-16 h-16"><span class="material-symbols-outlined text-2xl">lunch_dining</span><span class="text-[10px] font-bold mt-1">Log Meal</span></button>
+<button class="flex flex-col items-center justify-center text-white w-16 h-16"><span class="material-symbols-outlined text-2xl">pets</span><span class="text-[10px] font-bold mt-1">Start Walk</span></button>
+<div class="w-16 h-16"></div>
+<button class="flex flex-col items-center justify-center text-white w-16 h-16"><span class="material-symbols-outlined text-2xl">local_hospital</span><span class="text-[10px] font-bold mt-1">AI Vet</span></button>
+<button class="flex flex-col items-center justify-center text-white w-16 h-16"><span class="material-symbols-outlined text-2xl">photo_camera</span><span class="text-[10px] font-bold mt-1">Capture</span></button>
+<button class="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-16 bg-white text-primary rounded-full flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-4xl">add</span></button>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-primary/80 backdrop-blur-lg border-t border-white/20 p-2">
+<div class="flex justify-around items-center h-14">
+<a class="flex flex-col items-center gap-1 text-white" href="#">
+<span class="material-symbols-outlined text-3xl">home</span>
+<span class="text-xs font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/70 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-3xl icon-unfilled">restaurant_menu</span>
+<span class="text-xs font-medium">Recipes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/70 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-3xl">health_and_safety</span>
+<span class="text-xs font-medium">Health</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/70 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-3xl">location_on</span>
+<span class="text-xs font-medium">Location</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/70 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-3xl">shopping_bag</span>
+<span class="text-xs font-medium">Shop</span>
+</a>
+</div>
+</div>
+</div>
+
+</body></html>

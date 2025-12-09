@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weekly Meal Planner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+      .glass-card {
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .glass-card-dark {
+        background-color: rgba(30, 30, 50, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .glass-button {
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+       .glass-button-dark {
+        background-color: rgba(30, 30, 50, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4043f2",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101022",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-gradient-to-b from-[#a8b5ff] to-[#4043f2] group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-20 flex items-center p-4 pb-2 justify-between glass-card dark:glass-card-dark">
+<div class="text-white flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">pets</span>
+</div>
+<h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Weekly Meal Planner</h1>
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white/20">
+<img alt="User profile avatar" class="h-full w-full object-cover rounded-full" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfFWKPpUgsJKOg-ztVvtczTAwlN_7G-YWO5ujkUa3jDbobKvXGOXeSPP1PUMP43CZss7jUwyodxLgCy7DOvJYwZcD3eBf89rsuO61a3knFKGK7WZWouByIMqUoEk9dUuV8L4QuhfEx6k2b_LeEyt151rJ5s3m7C6TaLjKS9VV_OYL0-CK5fZGE8OpngOaEWE7prrjn_jMsrE6wyqwmSovtSzFC9Uy3DLp6CULQlGCJqi35yQPkAcmoOrXRfZCWpZoKYKR2a0Lpe0DF"/>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto px-4 pt-4 pb-44">
+<!-- Tabs -->
+<div class="pb-3 sticky top-[72px] z-10 glass-card dark:glass-card-dark rounded-t-lg -mx-4 px-4">
+<div class="flex border-b border-white/20 justify-between">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-white text-white pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Mon</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Tue</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Wed</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Thu</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Fri</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Sat</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/70 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Sun</p>
+</a>
+</div>
+</div>
+<div class="space-y-6 pt-4">
+<!-- Breakfast Section -->
+<div>
+<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3">Breakfast</h3>
+<div class="flex flex-col p-4 glass-card dark:glass-card-dark rounded-xl">
+<div class="flex flex-col items-center gap-6 rounded-lg border-2 border-dashed border-white/40 px-6 py-10">
+<div class="flex max-w-[480px] flex-col items-center gap-2">
+<p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Add Meal</p>
+<p class="text-white/80 text-sm font-normal leading-normal text-center">Drag a recipe here or tap to add.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Lunch Section -->
+<div>
+<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3">Lunch</h3>
+<div class="flex items-start gap-4 p-4 glass-card dark:glass-card-dark rounded-xl">
+<img class="aspect-square w-16 shrink-0 rounded-lg object-cover" data-alt="A bowl of chicken and rice dog food" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe0p7mFW2Qag2THeEk-WjuV544bUONYTzgDT8jk0pwCzTdXfHmvrrjK2bYwoV-LASsGFn_yaPJa1_oqc3E-Fh7whokLl85DEJpY2THBzm-N0FNt9tLIEQax54A2eGW1O9WOfAlbWsIpO0KaVccrnvHKZs2ipt9DSBtDoNDlpqo01gbXAKXqYyWCDwJA1ojR1p7eo-9rp-vXDzrlO4jn0qciZw7ShZhaaeeraMNzzRnmYhV1xcvQWUdm5ngFH_uh9H5M33z0wazJkcw"/>
+<div class="flex flex-col gap-1">
+<p class="text-white text-base font-bold leading-normal">Chicken &amp; Rice Delight</p>
+<p class="text-white/80 text-sm font-normal leading-normal">Calories: 350</p>
+</div>
+<button class="ml-auto text-white/80 flex h-8 w-8 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Dinner Section -->
+<div>
+<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3">Dinner</h3>
+<div class="flex flex-col p-4 glass-card dark:glass-card-dark rounded-xl">
+<div class="flex flex-col items-center gap-6 rounded-lg border-2 border-dashed border-white/40 px-6 py-10">
+<div class="flex max-w-[480px] flex-col items-center gap-2">
+<p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Add Meal</p>
+<p class="text-white/80 text-sm font-normal leading-normal text-center">Drag a recipe here or tap to add.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- CTAs -->
+<div class="pt-6 space-y-4">
+<button class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 gap-2 bg-[#FBBF24] text-[#4043f2] text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="truncate">Generate This Week's Plan</span>
+</button>
+<button class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 gap-2 glass-button dark:glass-button-dark text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="truncate">Create Shopping List</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-20 glass-card dark:glass-card-dark border-t border-white/20">
+<div class="flex justify-around items-center h-20">
+<a class="flex flex-col items-center justify-center text-white/70 w-full" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white w-full" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="text-xs font-bold">Recipes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/70 w-full" href="#">
+<span class="material-symbols-outlined">health_and_safety</span>
+<span class="text-xs font-medium">Health</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/70 w-full" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-xs font-medium">Location</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/70 w-full" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-xs font-medium">Shop</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

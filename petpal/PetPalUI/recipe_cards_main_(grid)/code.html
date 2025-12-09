@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetPal Recipes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4340f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-gradient-to-b from-[#4043f2] to-background-dark dark:from-[#4043f2] dark:to-background-dark group/design-root overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 pb-2">
+<div class="text-white flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">pets</span>
+</div>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrWzP39NKqm0NrpNO6hIFCfdGhkU1-f1n0OQIwrkA6gv6OM5v0AHsPKJfuSHpgQrY45cEHr0l7ah0U3a2IPj6m0XtM5Odi2FUMpLhDI1-eWBm6iCyhE9A-y30dmF09gf0zgklQLDa98tB29zGfgSBC5R26cORmwRgZQRXl7SNIQvYAscSd_E_3Q16FIcHU4lUxog4p55PmcOv_zw7UqhpnRSZFIyQZt5FoXMPzLHnn5cb821wr8f2X4mQw3OYa5WIu24H3dlN42BDr')"></div>
+</header>
+<!-- Headline -->
+<h1 class="text-white tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-6">Recipes for your pet</h1>
+<!-- Filters & Sort -->
+<div class="flex items-center gap-3 px-4 py-3 overflow-x-auto">
+<div class="flex gap-3">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/20 px-4 text-white">
+<p class="text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/10 px-4 text-white">
+<p class="text-sm font-medium leading-normal">High-Protein</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/10 px-4 text-white">
+<p class="text-sm font-medium leading-normal">Grain-Free</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/10 px-4 text-white">
+<p class="text-sm font-medium leading-normal">Puppy</p>
+</button>
+</div>
+<div class="ml-auto flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/10 pl-4 pr-2">
+<p class="text-white text-sm font-medium leading-normal">Popular</p>
+<span class="material-symbols-outlined text-white text-xl">expand_more</span>
+</div>
+</div>
+<!-- Recipe Grid -->
+<main class="grid flex-1 grid-cols-2 gap-4 p-4">
+<!-- Recipe Card 1 -->
+<div class="relative flex aspect-square flex-col justify-end overflow-hidden rounded-xl border border-white/20 bg-white/10 p-3 backdrop-blur-lg" data-alt="A bowl of salmon and sweet potato mash for dogs.">
+<div class="absolute inset-0 bg-cover bg-center -z-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBe-oeYTbvJBhdsSLaaKcMCf651Uv9gvYtvfWFOk96O69VKAupw3sq9Wid0EancfCmXwRoFZqlGx2wFO-oHGEj5bG-FquAZ-sXKt1xJN8XsoXICoKfn1FH9rs-KVGSaQXwFWCznX0NA-vN3cfStaoVxO8vf5kJOg86HbGeP5e3V5PM9I5ytzq2W7XWjjGhyS7RT5aunZrdXRE9S1VTROMj8Y4U-rt82tFwZ9_PJkNym_FeMTgt0F24x69cy9_B7ZfEbaryQyxL48FdY');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent -z-10"></div>
+<button class="absolute top-2 right-2 text-white">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+<div class="flex gap-1.5 mb-1.5">
+<span class="rounded-full bg-white/20 px-2 py-0.5 text-xs text-white">Grain-Free</span>
+</div>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Salmon &amp; Sweet Potato Mash</p>
+<div class="mt-1 flex gap-3 text-xs text-white/80">
+<span>350 kcal</span>
+<span>25 min</span>
+</div>
+</div>
+<!-- Recipe Card 2 -->
+<div class="relative flex aspect-square flex-col justify-end overflow-hidden rounded-xl border border-white/20 bg-white/10 p-3 backdrop-blur-lg" data-alt="A bowl of chicken and brown rice for dogs.">
+<div class="absolute inset-0 bg-cover bg-center -z-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBe-oeYTbvJBhdsSLaaKcMCf651Uv9gvYtvfWFOk96O69VKAupw3sq9Wid0EancfCmXwRoFZqlGx2wFO-oHGEj5bG-FquAZ-sXKt1xJN8XsoXICoKfn1FH9rs-KVGSaQXwFWCznX0NA-vN3cfStaoVxO8vf5kJOg86HbGeP5e3V5PM9I5ytzq2W7XWjjGhyS7RT5aunZrdXRE9S1VTROMj8Y4U-rt82tFwZ9_PJkNym_FeMTgt0F24x69cy9_B7ZfEbaryQyxL48FdY');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent -z-10"></div>
+<button class="absolute top-2 right-2 text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="flex gap-1.5 mb-1.5">
+<span class="rounded-full bg-white/20 px-2 py-0.5 text-xs text-white">High-Protein</span>
+</div>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Chicken &amp; Brown Rice Bowl</p>
+<div class="mt-1 flex gap-3 text-xs text-white/80">
+<span>420 kcal</span>
+<span>30 min</span>
+</div>
+</div>
+<!-- Recipe Card 3 -->
+<div class="relative flex aspect-square flex-col justify-end overflow-hidden rounded-xl border border-white/20 bg-white/10 p-3 backdrop-blur-lg" data-alt="A bowl of beef and barley stew for dogs.">
+<div class="absolute inset-0 bg-cover bg-center -z-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBe-oeYTbvJBhdsSLaaKcMCf651Uv9gvYtvfWFOk96O69VKAupw3sq9Wid0EancfCmXwRoFZqlGx2wFO-oHGEj5bG-FquAZ-sXKt1xJN8XsoXICoKfn1FH9rs-KVGSaQXwFWCznX0NA-vN3cfStaoVxO8vf5kJOg86HbGeP5e3V5PM9I5ytzq2W7XWjjGhyS7RT5aunZrdXRE9S1VTROMj8Y4U-rt82tFwZ9_PJkNym_FeMTgt0F24x69cy9_B7ZfEbaryQyxL48FdY');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent -z-10"></div>
+<button class="absolute top-2 right-2 text-white">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+<div class="flex gap-1.5 mb-1.5">
+<span class="rounded-full bg-white/20 px-2 py-0.5 text-xs text-white">Hypoallergenic</span>
+</div>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Beef &amp; Barley Stew</p>
+<div class="mt-1 flex gap-3 text-xs text-white/80">
+<span>450 kcal</span>
+<span>45 min</span>
+</div>
+</div>
+<!-- Recipe Card 4 -->
+<div class="relative flex aspect-square flex-col justify-end overflow-hidden rounded-xl border border-white/20 bg-white/10 p-3 backdrop-blur-lg" data-alt="A bowl of turkey and quinoa for puppies.">
+<div class="absolute inset-0 bg-cover bg-center -z-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBe-oeYTbvJBhdsSLaaKcMCf651Uv9gvYtvfWFOk96O69VKAupw3sq9Wid0EancfCmXwRoFZqlGx2wFO-oHGEj5bG-FquAZ-sXKt1xJN8XsoXICoKfn1FH9rs-KVGSaQXwFWCznX0NA-vN3cfStaoVxO8vf5kJOg86HbGeP5e3V5PM9I5ytzq2W7XWjjGhyS7RT5aunZrdXRE9S1VTROMj8Y4U-rt82tFwZ9_PJkNym_FeMTgt0F24x69cy9_B7ZfEbaryQyxL48FdY');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent -z-10"></div>
+<button class="absolute top-2 right-2 text-white">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+<div class="flex gap-1.5 mb-1.5">
+<span class="rounded-full bg-white/20 px-2 py-0.5 text-xs text-white">Puppy</span>
+<span class="rounded-full bg-white/20 px-2 py-0.5 text-xs text-white">Low-Fat</span>
+</div>
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Turkey &amp; Quinoa Delight</p>
+<div class="mt-1 flex gap-3 text-xs text-white/80">
+<span>320 kcal</span>
+<span>20 min</span>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="sticky bottom-0 mt-auto flex gap-2 border-t border-white/10 bg-background-dark/80 px-4 pb-3 pt-2 backdrop-blur-lg dark:bg-background-dark/80">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#9d9db9]" href="#">
+<span class="material-symbols-outlined flex h-8 items-center justify-center">home</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-primary" href="#">
+<span class="material-symbols-outlined flex h-8 items-center justify-center" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Recipes</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#9d9db9]" href="#">
+<span class="material-symbols-outlined flex h-8 items-center justify-center">health_and_safety</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Health</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#9d9db9]" href="#">
+<span class="material-symbols-outlined flex h-8 items-center justify-center">location_on</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Location</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#9d9db9]" href="#">
+<span class="material-symbols-outlined flex h-8 items-center justify-center">shopping_cart</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Shop</p>
+</a>
+</nav>
+</div>
+</body></html>

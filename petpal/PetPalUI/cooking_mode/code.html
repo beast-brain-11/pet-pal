@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cooking Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4043f2",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101022",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-gradient-to-b from-primary to-[#6769f5] group/design-root overflow-hidden">
+<!-- Top Bar -->
+<header class="flex items-center justify-between p-4 pt-6 shrink-0">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full glassmorphism text-white">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<div class="flex items-center gap-2 rounded-full px-4 py-2 glassmorphism">
+<span class="material-symbols-outlined text-white text-lg">mic</span>
+<p class="text-sm font-medium text-white">Say 'Next Step'</p>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex flex-col flex-grow px-4 pt-2 pb-4">
+<!-- Progress Bar -->
+<div class="flex flex-col gap-2 py-4">
+<div class="flex justify-between">
+<p class="text-white/80 text-base font-medium leading-normal">Step 3 of 6</p>
+</div>
+<div class="rounded-full bg-white/20">
+<div class="h-2 rounded-full bg-white" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Media Player -->
+<div class="py-4">
+<div class="relative flex items-center justify-center bg-cover bg-center aspect-video rounded-xl" data-alt="A video showing ingredients being mixed in a bowl." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXHLiDoou4cA1GivUC1GzPwxgE-VHkQg-fHmsXhxfPTYzPkLjxocj28I-yg4pMgV45-KRvtsa2ogZs7TTWXiGiGwgHHq_54bzosNKm8LZnQW86ea0yODSGoOtXWlWZgyUMz10XyuIKeqjeow__pbkcEgSOTQSuq8piUkkcinsYcwFAwjBFjNDh1UZ1pfxpHsRAGyyyDt56qVX5shc2AGcPAfQp3UntD-Q2lz-5avG-Vq-pek11Badrr0ezL1MZM2SoL5V817BIbdhS");'>
+<button class="flex shrink-0 items-center justify-center rounded-full size-16 bg-black/40 text-white">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Headline & Body -->
+<div class="flex-grow">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight pt-4 text-left">Mix the ingredients</h1>
+<p class="text-white/90 text-base font-normal leading-normal pt-2">Combine the cooked sweet potato, brown rice, and shredded chicken in a large bowl. Stir until everything is evenly mixed.</p>
+</div>
+<!-- Timer -->
+<div class="flex flex-col items-center gap-4 py-6">
+<div class="w-48 h-48 rounded-full border-4 border-white/20 flex items-center justify-center glassmorphism">
+<div class="flex flex-col items-center">
+<p class="text-white/80 text-sm font-medium">Mix for</p>
+<p class="text-white text-6xl font-bold tracking-tighter">0:45</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<footer class="flex items-center justify-between gap-4 p-4 pb-8 shrink-0">
+<button class="flex size-14 shrink-0 items-center justify-center rounded-full glassmorphism text-white">
+<span class="material-symbols-outlined text-3xl">chevron_left</span>
+</button>
+<button class="flex h-14 grow items-center justify-center gap-2 rounded-full bg-white px-6 text-base font-bold text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+        Mark complete
+      </button>
+<button class="flex size-14 shrink-0 items-center justify-center rounded-full glassmorphism text-white">
+<span class="material-symbols-outlined text-3xl">chevron_right</span>
+</button>
+</footer>
+</div>
+</body></html>

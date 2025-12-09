@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Medical History Survey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4040f2",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101022",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .dark .glassmorphism {
+            background: rgba(30, 30, 50, 0.6);
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-gradient-to-b from-blue-100 to-[#F0F2FF] group/design-root dark:from-background-dark dark:to-[#181830] overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 bg-white/50 backdrop-blur-md dark:bg-background-dark/50">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start text-zinc-800 dark:text-zinc-200">
+<span class="material-symbols-outlined !text-2xl">arrow_back_ios_new</span>
+</div>
+<h2 class="text-zinc-900 dark:text-zinc-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Medical History</h2>
+<div class="flex w-12 items-center justify-end">
+<p class="text-primary dark:text-blue-400 text-base font-bold leading-normal tracking-[0.015em] shrink-0">Exit</p>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-3 px-4 pt-2 pb-4">
+<div class="flex gap-6 justify-end">
+<p class="text-zinc-800 dark:text-zinc-200 text-sm font-normal leading-normal">7/8</p>
+</div>
+<div class="rounded-full bg-primary/20 dark:bg-primary/30">
+<div class="h-2 rounded-full bg-primary" style="width: 87.5%;"></div>
+</div>
+</div>
+</div>
+<main class="flex-grow px-4">
+<!-- Headline Text -->
+<h1 class="text-zinc-900 dark:text-zinc-100 tracking-tight text-[32px] font-bold leading-tight text-left pb-1 pt-4">Any Medical Conditions?</h1>
+<!-- Body Text -->
+<p class="text-zinc-600 dark:text-zinc-400 text-base font-normal leading-normal pb-6">Select any conditions that apply and provide the requested details.</p>
+<!-- Chips for Common Conditions -->
+<div class="flex gap-3 pb-6 overflow-x-auto snap-x">
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4">
+<p class="text-white text-sm font-medium leading-normal">Hip Dysplasia</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-white dark:bg-zinc-700 pl-4 pr-4 border border-zinc-200 dark:border-zinc-600">
+<p class="text-zinc-800 dark:text-zinc-200 text-sm font-medium leading-normal">Allergies</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4">
+<p class="text-white text-sm font-medium leading-normal">Diabetes</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-white dark:bg-zinc-700 pl-4 pr-4 border border-zinc-200 dark:border-zinc-600">
+<p class="text-zinc-800 dark:text-zinc-200 text-sm font-medium leading-normal">Arthritis</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-white dark:bg-zinc-700 pl-4 pr-4 border border-zinc-200 dark:border-zinc-600">
+<p class="text-zinc-800 dark:text-zinc-200 text-sm font-medium leading-normal">Obesity</p>
+</div>
+</div>
+<!-- Hip Dysplasia Details Card -->
+<div class="mb-6 flex flex-col gap-4 rounded-xl border border-white/50 p-4 glassmorphism dark:border-zinc-700/50">
+<h3 class="text-zinc-900 dark:text-zinc-100 text-lg font-bold">Hip Dysplasia Details</h3>
+<!-- Severity Slider -->
+<div>
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2" for="severity">Severity</label>
+<input class="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-primary" id="severity" max="2" min="0" type="range" value="1"/>
+<div class="flex justify-between text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+<span>Mild</span>
+<span>Moderate</span>
+<span>Severe</span>
+</div>
+</div>
+<!-- Date of Diagnosis -->
+<div>
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2" for="diagnosis-date">Date of Diagnosis
+<div class="relative">
+<input class="w-full rounded border-zinc-300 bg-white/80 dark:bg-zinc-800/80 dark:border-zinc-600 dark:text-white dark:placeholder:text-zinc-400 focus:border-primary focus:ring-primary" id="diagnosis-date" placeholder="Select Date" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400">calendar_today</span>
+</div>
+</label></div>
+<!-- Current Treatment -->
+<div>
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2" for="treatment">Current Treatment
+<input class="w-full rounded border-zinc-300 bg-white/80 dark:bg-zinc-800/80 dark:border-zinc-600 dark:text-white dark:placeholder:text-zinc-400 focus:border-primary focus:ring-primary" id="treatment" placeholder="e.g., Joint supplements" type="text"/>
+</label></div>
+<!-- Veterinarian Notes -->
+<div>
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2" for="vet-notes">Veterinarian Notes
+<textarea class="w-full rounded border-zinc-300 bg-white/80 dark:bg-zinc-800/80 dark:border-zinc-600 dark:text-white dark:placeholder:text-zinc-400 focus:border-primary focus:ring-primary" id="vet-notes" placeholder="Add any relevant notes..." rows="3"></textarea>
+</label></div>
+</div>
+<!-- Diabetes Details Card -->
+<div class="mb-6 flex flex-col gap-4 rounded-xl border border-white/50 p-4 glassmorphism dark:border-zinc-700/50">
+<h3 class="text-zinc-900 dark:text-zinc-100 text-lg font-bold">Diabetes Details</h3>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm">Fill in the details for this condition.</p>
+</div>
+<!-- Medication Section -->
+<div class="mb-6 flex flex-col gap-4">
+<h3 class="text-zinc-900 dark:text-zinc-100 text-xl font-bold">Medications</h3>
+<!-- Medication Card -->
+<div class="flex flex-col gap-3 rounded-xl p-4 border border-white/50 glassmorphism dark:border-zinc-700/50">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-zinc-800 dark:text-zinc-200">Vetmedin</p>
+<p class="text-sm text-zinc-600 dark:text-zinc-400">5mg, Twice Daily</p>
+</div>
+<span class="material-symbols-outlined text-zinc-500 dark:text-zinc-400">more_vert</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+<span class="material-symbols-outlined !text-base">calendar_month</span>
+<span>01/01/2023 - Ongoing</span>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-2 text-primary dark:text-blue-400 text-sm font-medium">
+<span class="material-symbols-outlined !text-base">file_present</span>
+<span>Prescription.pdf</span>
+</div>
+<div class="flex items-center gap-2 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+<span class="material-symbols-outlined text-green-500 !text-base">notifications_active</span>
+<span>Reminders On</span>
+</div>
+</div>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-primary/50 dark:border-primary/70 py-3 text-primary dark:text-blue-400 font-bold">
+<span class="material-symbols-outlined">add_circle_outline</span>
+<span>Add Medication</span>
+</button>
+</div>
+<!-- Surgery History Section -->
+<div class="mb-24 flex flex-col gap-4">
+<h3 class="text-zinc-900 dark:text-zinc-100 text-xl font-bold">Surgery History</h3>
+<button class="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-primary/50 dark:border-primary/70 py-3 text-primary dark:text-blue-400 font-bold">
+<span class="material-symbols-outlined">add_circle_outline</span>
+<span>Add Surgery</span>
+</button>
+</div>
+</main>
+<!-- Bottom CTA -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-blue-100 to-transparent dark:from-background-dark dark:to-transparent">
+<button class="w-full rounded-full bg-primary py-4 text-center text-base font-bold text-white shadow-lg shadow-primary/30">Next</button>
+</div>
+</div>
+</body></html>

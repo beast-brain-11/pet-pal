@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Size &amp; Weight Survey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6363f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 48;
+        }
+        body {
+            min-height: 100vh;
+             min-height: 100dvh;
+        }
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gradient-to-b from-[#4043f2] to-[#6363f2] font-display text-white">
+<div class="flex flex-col h-full min-h-screen p-6">
+<header class="flex items-center justify-between">
+<button class="bg-white/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-white !text-2xl !font-bold" style="font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;">arrow_back_ios_new</span>
+</button>
+<div class="text-sm font-semibold">3/5</div>
+<div class="w-10"></div>
+</header>
+<main class="flex-grow flex flex-col pt-8">
+<h1 class="text-3xl font-bold text-center mb-8">How big is Buddy?</h1>
+<section class="mb-8">
+<h2 class="text-lg font-bold mb-4">Size</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col items-center p-3 rounded-2xl bg-glass border border-white/20 shadow-glass">
+<img alt="Small dog silhouette" class="h-10 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDaW0GkDEbUzIMLYpyZ4h2_SL3UlOWcJyTy8hRPymdpD5wvLajA2u9_Iq8UZCse9590RMcXkKfAU5SMfetB4oc-pWMUX589iDZSHzYoMY9f3BRz9qJrPvBsqfvM8usyR7Xp6s-cJzd1jYjqbtYR915LfCDKipq37n7HyNHpCHyysan4mOb1UY0MXE5I2DYNqPEKuG9zChewZCnyBOYH_TIuXXFhrNNoH17LrO0KyMi4s7wVFzFtJ6IMkfOl9i6Er5uMSwuNctZc8zz"/>
+<span class="font-semibold text-sm">Small</span>
+<span class="text-xs text-white/70">0-10 kg</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-2xl bg-white/30 border border-white/40 shadow-glass ring-2 ring-white">
+<img alt="Medium dog silhouette" class="h-10 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARZ6Ab7p1x1PqxiiQD1xwrIRUH8PmOaJXGncAwBhlXrTcRPYU7q8ZCWuXmvqoeI8fAegesFWXp-DhFEDnkftw3ICIa-N0Oq8iSlbR9Vw9NPun5b3r9AMLUEFJXgUNJB-AEiUgYyipXZGOMRvd5NZ8U-DbRU20O0Kf_dzuNYWS6xAE_8sBfizPgUhNm_AGTVIZC_IQ_m3l9Ax_DBsppbMu5GlRVd-UcvbvZDQVD4H6YTPqwm-qFC9-nsr8goXiB212pB1Lo1zDHH0m3"/>
+<span class="font-semibold text-sm">Medium</span>
+<span class="text-xs text-white/70">11-25 kg</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-2xl bg-glass border border-white/20 shadow-glass">
+<img alt="Large dog silhouette" class="h-10 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMWxDPxdmeBkWBwTlX4cSKo2ZiDeWE1uksJSKaEUeHHuhzEmsN2vnpzSZa2RyM_cZOyu6HCSnEaNZcKMMAdc6szhCJ0ql080RiHHfFsYDKKEMVjhph7Usw-p7WEZ2uQQL7FEGwqzK46qDiXweJFx74svdN45nnJsY09r2Pf4WlUZVUvE20SAjN20Ok8icKD6OJJWqyo1EfVD_q90ub3xyuwaxSPf6OD745WEtpUdEm0dHDOxK-Rs0jijVgvR1yCtAyRNq2BAakekkl"/>
+<span class="font-semibold text-sm">Large</span>
+<span class="text-xs text-white/70">26-45 kg</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-2xl bg-glass border border-white/20 shadow-glass">
+<img alt="Giant dog silhouette" class="h-10 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM0NGS7lLk6nBk26xVq_kOi8cUad3VY6PnXKus3x2OVTpY3B_f0LLLelqmzOumaLOA6j4f-MvyA16U-T8_A5GkxnrQafBrPec345b38cZGAbv1H6y3OrLUGKLlGfzBoeDA87ZAUGbwnT2_MTCpOuTj0s4hAnDA-3Wk_uhs2-UcoxvG2SftgSXCDVePmSEObLcWiFLlwbYwoI92l6BzmggzeNjgCgmIM2EPeNOxbQ4gzz0HswUlCH-ErJpVEp8R-BVvHTPqdyhRn-nq"/>
+<span class="font-semibold text-sm">Giant</span>
+<span class="text-xs text-white/70">&gt;45 kg</span>
+</div>
+</div>
+</section>
+<section class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold">Weight</h2>
+<div class="flex items-center bg-black/20 rounded-full p-1 text-sm">
+<button class="px-3 py-1 rounded-full bg-white text-primary font-bold">kg</button>
+<button class="px-3 py-1 rounded-full text-white/70 font-semibold">lbs</button>
+</div>
+</div>
+<div class="relative w-full">
+<input class="w-full h-2 bg-black/20 rounded-lg appearance-none cursor-pointer accent-white" max="50" min="1" style="background-size: 30% 100%;" type="range" value="15"/>
+<div class="flex justify-between text-xs text-white/70 mt-2">
+<span>1kg</span>
+<span>50kg</span>
+</div>
+<div class="absolute -top-8 left-1/4 -translate-x-1/2">
+<div class="bg-white text-primary text-sm font-bold px-3 py-1 rounded-lg relative">
+                            15 kg
+                            <div class="absolute left-1/2 -translate-x-1/2 bottom-[-4px] w-3 h-3 bg-white transform rotate-45"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-8">
+<h2 class="text-lg font-bold mb-4">Activity Level</h2>
+<div class="flex justify-between space-x-3">
+<button class="w-full text-center py-3 rounded-xl bg-glass border border-white/20 shadow-glass text-sm font-semibold">Low</button>
+<button class="w-full text-center py-3 rounded-xl bg-white text-primary border border-white/40 shadow-glass text-sm font-bold">Moderate</button>
+<button class="w-full text-center py-3 rounded-xl bg-glass border border-white/20 shadow-glass text-sm font-semibold">High</button>
+</div>
+</section>
+<div class="mt-auto pt-4">
+<button class="w-full bg-white text-primary font-bold py-4 rounded-full text-lg">Continue</button>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Document Upload Survey</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4043f2",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101022",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glassmorphism {
+            background: rgba(26, 26, 46, 0.4); /* Darker glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-gradient-to-b from-[#E6E7FF] to-[#B9BBFF] dark:from-[#1A1A2E] dark:to-[#101022] group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between bg-transparent">
+<div class="flex size-12 shrink-0 items-center justify-center text-[#1A1A2E] dark:text-white">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios_new</span>
+</div>
+<h2 class="text-[#1A1A2E] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Health Records</h2>
+<div class="flex size-12 shrink-0 items-center"></div>
+</div>
+<div class="flex flex-col px-4 pt-6 pb-8">
+<!-- Headline Text -->
+<h1 class="text-[#1A1A2E] dark:text-white tracking-tight text-[32px] font-bold leading-tight text-left pb-1">Upload Important Documents</h1>
+<!-- Body Text -->
+<p class="text-[#5A5A78] dark:text-gray-400 text-base font-normal leading-normal pb-6">Keep all records in one place (Optional).</p>
+<!-- Main Upload Area -->
+<div class="flex flex-col p-4 glassmorphism rounded-xl shadow-lg">
+<div class="flex flex-col items-center gap-4 rounded-lg border-2 border-dashed border-primary/50 dark:border-primary/70 px-6 py-10">
+<div class="flex size-16 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-4xl">cloud_upload</span>
+</div>
+<div class="flex max-w-[480px] flex-col items-center gap-1 text-center">
+<p class="text-[#1A1A2E] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Tap to upload or take a photo</p>
+<p class="text-[#5A5A78] dark:text-gray-400 text-sm font-normal leading-normal">Supports PDF, JPG, PNG. Files are securely backed up.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 w-full mt-4">
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-4 bg-white dark:bg-white/10 text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined mr-2">photo_library</span>
+<span class="truncate">Choose from Library</span>
+</button>
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-4 bg-white dark:bg-white/10 text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined mr-2">photo_camera</span>
+<span class="truncate">Take Photo</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section Header -->
+<h3 class="text-[#1A1A2E] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3 pt-8">Document Categories</h3>
+<!-- Document Categories Chips -->
+<div class="flex flex-wrap gap-2">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 glassmorphism text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]"><span class="truncate">Adoption Papers</span></button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 glassmorphism text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]"><span class="truncate">Vaccination</span></button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 glassmorphism text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]"><span class="truncate">Medical Reports</span></button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 glassmorphism text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]"><span class="truncate">Lab Tests</span></button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 glassmorphism text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]"><span class="truncate">X-rays/Scans</span></button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 glassmorphism text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]"><span class="truncate">Insurance</span></button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 glassmorphism text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]"><span class="truncate">Microchip</span></button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 glassmorphism text-[#1A1A2E] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]"><span class="truncate">Other</span></button>
+</div>
+<!-- Uploaded Files List -->
+<div class="mt-8 space-y-3">
+<div class="flex items-center gap-4 p-3 rounded-xl glassmorphism">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1">
+<p class="text-[#1A1A2E] dark:text-white font-bold text-sm">vaccination_record_2023.pdf</p>
+<p class="text-[#5A5A78] dark:text-gray-400 text-xs">1.2 MB</p>
+</div>
+<button class="flex size-8 shrink-0 items-center justify-center rounded-full text-[#5A5A78] dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-xl glassmorphism">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="flex-1">
+<p class="text-[#1A1A2E] dark:text-white font-bold text-sm">xray_scan_hip.jpg</p>
+<p class="text-[#5A5A78] dark:text-gray-400 text-xs">3.4 MB</p>
+</div>
+<button class="flex size-8 shrink-0 items-center justify-center rounded-full text-[#5A5A78] dark:text-gray-400 hover:bg-black/10 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sticky Footer with Action Buttons -->
+<div class="sticky bottom-0 mt-auto w-full bg-white/50 p-4 backdrop-blur-sm dark:bg-black/20">
+<div class="flex flex-col gap-2">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg">
+<span class="truncate">Save &amp; Continue</span>
+</button>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-4 text-primary dark:text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Skip for Now</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>
