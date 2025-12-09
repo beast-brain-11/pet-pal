@@ -1,5 +1,5 @@
 // AI Health Chat Page - WhatsApp-style unified chat UI
-// Uses HuggingFace Spaces backend for AI responses
+// Real-time voice mode with Gemini Live API
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,7 +8,9 @@ import 'package:petpal/core/constants/app_colors.dart';
 import 'package:petpal/core/services/firestore_service.dart';
 import 'package:petpal/core/services/health_api_service.dart';
 import 'package:petpal/core/services/mem0_service.dart';
+import 'package:petpal/core/services/live_voice_service.dart';
 import 'package:petpal/features/health/models/health_consultation_models.dart';
+import 'package:petpal/features/health/presentation/pages/voice_call_page.dart';
 
 class AIHealthPage extends ConsumerStatefulWidget {
   const AIHealthPage({super.key});
@@ -32,6 +34,11 @@ class _AIHealthPageState extends ConsumerState<AIHealthPage> {
   bool _isProcessing = false;
   ConsultationMode _currentMode = ConsultationMode.text;
   bool _backendHealthy = false;
+
+  // Voice mode
+  final LiveVoiceService _voiceService = LiveVoiceService();
+  bool _isVoiceConnected = false;
+  bool _isRecording = false;
 
   @override
   void initState() {
@@ -192,20 +199,47 @@ class _AIHealthPageState extends ConsumerState<AIHealthPage> {
     }
   }
 
-  void _startVoiceMode() {
-    setState(() => _currentMode = ConsultationMode.voice);
-    _messages.add(
-      _ChatMessage(
-        text:
-            '🎙️ Voice Mode Active\n\n'
-            'Type your question and I\'ll respond. '
-            'Real-time voice streaming is being set up!',
-        isUser: false,
-        timestamp: DateTime.now(),
+  Future<void> _startVoiceMode() async {
+    // Navigate to full-screen voice call page (Gemini Live style)
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) =>
+            VoiceCallPage(dogId: _dogId ?? 'default', dogName: _dogName),
       ),
     );
-    setState(() {});
-    _scrollToBottom();
+
+    // Add transcripts from voice call to chat history
+    if (result != null && result is List<TranscriptMessage>) {
+      for (final msg in result) {
+        _messages.add(
+          _ChatMessage(
+            text: msg.text,
+            isUser: msg.isUser,
+            timestamp: msg.timestamp,
+          ),
+        );
+      }
+      setState(() {});
+      _scrollToBottom();
+    }
+  }
+
+  Future<void> _toggleRecording() async {
+    if (_isRecording) {
+      await _voiceService.stopRecording();
+    } else {
+      await _voiceService.startRecording();
+    }
+  }
+
+  Future<void> _stopVoiceMode() async {
+    await _voiceService.disconnect();
+    setState(() {
+      _isVoiceConnected = false;
+      _isRecording = false;
+      _currentMode = ConsultationMode.text;
+    });
   }
 
   void _startVideoMode() {
@@ -244,6 +278,7 @@ class _AIHealthPageState extends ConsumerState<AIHealthPage> {
   }
 
   void _resetToTextMode() {
+    _stopVoiceMode();
     setState(() => _currentMode = ConsultationMode.text);
     ScaffoldMessenger.of(
       context,
@@ -656,6 +691,65 @@ class _AIHealthPageState extends ConsumerState<AIHealthPage> {
   }
 
   Widget _buildInputBar() {
+    // Voice mode: show mic button
+    if (_currentMode == ConsultationMode.voice && _isVoiceConnected) {
+      return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.05),
+              blurRadius: 8,
+              offset: const Offset(0, -2),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              _isRecording
+                  ? '🔴 Recording... Release to send'
+                  : 'Hold to speak',
+              style: TextStyle(
+                color: _isRecording ? Colors.red : Colors.grey,
+                fontSize: 13,
+              ),
+            ),
+            const SizedBox(height: 12),
+            GestureDetector(
+              onTapDown: (_) => _toggleRecording(),
+              onTapUp: (_) => _toggleRecording(),
+              onTapCancel: () => _voiceService.stopRecording(),
+              child: Container(
+                width: 72,
+                height: 72,
+                decoration: BoxDecoration(
+                  color: _isRecording ? Colors.red : Colors.blue,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: (_isRecording ? Colors.red : Colors.blue)
+                          .withValues(alpha: 0.4),
+                      blurRadius: 16,
+                      spreadRadius: _isRecording ? 8 : 0,
+                    ),
+                  ],
+                ),
+                child: Icon(
+                  _isRecording ? Icons.stop : Icons.mic,
+                  color: Colors.white,
+                  size: 36,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    // Text/Video/Emergency mode: show text input
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
@@ -752,6 +846,7 @@ class _AIHealthPageState extends ConsumerState<AIHealthPage> {
 
   @override
   void dispose() {
+    _voiceService.dispose();
     _messageController.dispose();
     _scrollController.dispose();
     super.dispose();

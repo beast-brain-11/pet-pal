@@ -1,5 +1,5 @@
 ---
-title: PetPal AI Backend
+title: PetPal AI Health Backend
 emoji: 🐕
 colorFrom: purple
 colorTo: blue
@@ -9,20 +9,44 @@ license: mit
 app_port: 7860
 ---
 
-# PetPal AI Backend
+# PetPal AI Health Backend v2.0
 
-Real-time AI Vet consultation powered by Gemini.
+Multi-Agent AI Vet powered by **Google ADK + Mem0**
 
-## Endpoints
+## Agents
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/` | GET | Home page |
-| `/health` | GET | Health check |
-| `/health/text` | POST | Text consultation |
-| `/ws/voice/{session_id}` | WebSocket | Voice streaming |
-| `/ws/video/{session_id}` | WebSocket | Video streaming |
+| Agent | Role |
+|-------|------|
+| 🎯 Coordinator | Routes requests to specialists |
+| 🏥 Health Specialist | Consultations, symptoms, medications |
+| 🚨 Emergency | Crisis response, first aid |
+
+## WebSocket Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `/ws/consultation` | Health consultations (text/voice/video/emergency) |
+| `/ws/prescription` | Medication management + interactions |
+| `/ws/vaccination` | Vaccination tracking + reminders |
+
+## REST Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `GET /` | Home page |
+| `GET /health` | Health check |
 
 ## Setup
 
-Add your `GEMINI_API_KEY` in the Secrets section of your Space settings.
+Add these secrets in HuggingFace Spaces settings:
+- `GOOGLE_API_KEY` - Your Gemini API key
+- `MEM0_API_KEY` - Your Mem0 API key
+
+## Features
+
+- ✅ Real-time WebSocket streaming
+- ✅ Persistent memory per dog (Mem0)
+- ✅ Multi-agent routing
+- ✅ Emergency detection
+- ✅ Drug interaction checking
+- ✅ Vaccination scheduling

@@ -45,5 +45,12 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<!-- Permissions for voice/video mode -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>PetPal needs microphone access for voice consultations with the AI vet</string>
+	<key>NSCameraUsageDescription</key>
+	<string>PetPal needs camera access to show your pet during video consultations</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>PetPal uses speech recognition for voice consultations</string>
 </dict>
 </plist>

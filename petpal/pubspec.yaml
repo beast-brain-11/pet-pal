@@ -78,12 +78,20 @@ dependencies:
   # Real-time Streaming
   web_socket_channel: ^2.4.0
   
-  # Audio Recording & Playback - uncomment after fixing Android config
-  # record: ^5.0.4
-  # just_audio: ^0.9.36
+  # Audio Recording & Playback for Voice Mode
+  record: ^5.2.0
+  just_audio: ^0.9.46
+  audio_waveforms: ^1.2.0
+  
+  # Permissions
+  permission_handler: ^11.4.0
   
   # Camera for video mode - uncomment after Android config
   # camera: ^0.10.5+9
+
+dependency_overrides:
+  # Fix record_linux compatibility issue
+  record_linux: ^1.0.0
 
 dev_dependencies:
   flutter_test:

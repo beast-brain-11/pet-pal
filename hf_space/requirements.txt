@@ -1,9 +1,20 @@
-# PetPal AI Backend - HuggingFace Spaces
-# Dependencies for FastAPI + Gemini
+# PetPal AI Health Backend - Requirements
+# Google ADK + Mem0 + FastAPI for HuggingFace Spaces
 
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-websockets==12.0
-google-generativeai==0.8.3
-pydantic==2.5.2
-python-multipart==0.0.6
+# Core FastAPI - Updated for google-adk compatibility
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+websockets>=12.0
+python-multipart>=0.0.9
+pydantic>=2.5.0
+
+# Google ADK for Multi-Agent System
+google-adk>=0.5.0
+google-genai>=1.0.0
+
+# Mem0 for Persistent Memory
+mem0ai>=0.1.0
+
+# Utilities
+python-dotenv>=1.0.0
+httpx>=0.25.0

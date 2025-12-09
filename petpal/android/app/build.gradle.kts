@@ -23,7 +23,7 @@ android {
 
     defaultConfig {
         applicationId = "com.petpal.app"
-        minSdk = flutter.minSdkVersion
+        minSdk = 24  // Required for audio recording packages
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
